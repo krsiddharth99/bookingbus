@@ -115,7 +115,9 @@ const Home = (props) => {
         <React.Fragment>
             <Header open={props.open} isLoggedIn={props.isLoggedIn} menuOpen={props.menuOpen} />
             <div className="container-fluid m-0 p-0">
-                <div className="container-fluid" style={{ backgroundImage: 'url("/imgs/about/bg.png")', backgroundSize: '100% 100%', height: '280px' }}></div>
+                <div className="container-fluid d-flex justify-content-end" style={{ backgroundImage: 'url("/imgs/about/bg.png")', backgroundSize: '100% 100%', height: '280px' }}>
+                    <img src="/imgs/bus.png" style={{ position: 'relative', top: '90px', left: '75px' }} alt="" />
+                </div>
                 <h3 className="text-center mb-20" style={{ color: '#2C3138', fontWeight: 'bold' }}>Book Your Bus Ticket</h3>
                 <div className="container position-sticky" style={{ top: '80px', left: '100px', zIndex: '10' }}>
                     <div className="d-flex" style={{ padding: '10px', backgroundColor: '#2c3e50', borderRadius: '10px' }}>

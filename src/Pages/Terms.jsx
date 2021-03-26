@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import ReactHtmlParser from 'react-html-parser';
+import 'animate.css/animate.css'
 
 const terms = [
     {
@@ -34,7 +35,7 @@ const Terms = () => {
         <React.Fragment>
             <div className="container-fluid pt-10 pb-10 bg-white shadow-sm" style={{ zIndex: '10', position: 'fixed', left: '0px', right: '0px', top: '0px' }}>
                 <div className="container">
-                    <div className="row align-items-center">
+                    <div className="row align-items-center wow fadeInDown">
                         <div className="col-md-6 ml-0 pl-0">
                             <NavLink to="/" style={{ textDecoration: 'none' }}>
                                 <div className="d-flex align-items-center">
@@ -62,7 +63,7 @@ const Terms = () => {
                 </p>
                 {
                     terms.map((data) => {
-                        return <div className="mt-30">
+                        return <div className="mt-30 wow fadeInUp">
                             <p style={{ color: 'black', fontSize: '15px', fontWeight: 'bold' }}>{(terms.indexOf(data) + 1) + ". " + ReactHtmlParser(data.title)}</p>
                             <p style={{ color: 'rgba(0,0,0,0.5)', fontSize: '14px', fontWeight: '600' }}>{ReactHtmlParser(data.desc)}</p>
                         </div>
