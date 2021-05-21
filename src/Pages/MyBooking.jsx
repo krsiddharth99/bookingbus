@@ -4,10 +4,10 @@ import { Breadcrumb, Button, Input, InputGroup, Divider } from 'rsuite';
 import Footer from '../Components/Footer'
 import Header from '../Components/Header'
 
-const MyBooking = () => {
+const MyBooking = (props) => {
     return (
         <React.Fragment>
-            <Header />
+            <Header open={props.open} isLoggedIn={props.isLoggedIn} menuOpen={props.menuOpen} />
             <div className="container-fluid pt-90" style={{ backgroundImage: 'url("/imgs/about/bg.png")', backgroundSize: '100% 100%', height: '250px' }}>
                 <div className="container">
                     <Breadcrumb>

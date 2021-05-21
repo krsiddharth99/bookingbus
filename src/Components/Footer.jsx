@@ -43,7 +43,7 @@ const Footer = () => {
                 <div className="container d-flex flex-column justify-content-center align-items-center">
                     <div className="row">
                         <div className="col-md-3">
-                            <p style={headingText}>VitCity SmartBus</p>
+                            <p style={headingText}>UNIV-BUS</p>
                             <hr className="mt-10" style={dividerStyle} />
                             <p style={{ color: 'white', fontSize: '13px', letterSpacing: '0.6px', marginBottom: '10px' }}>IntrCity powered by RailYatri, is India’ s first SmartBus network, founded on the principle of solving challenges of traveling in a bus. IntrCity has evolved into offering its travelers an end-to-end travel experience and branded in-bus features for a safer journey.</p>
 
@@ -92,7 +92,7 @@ const Footer = () => {
                                     <Icon icon="phone" style={{ color: 'white' }} /><span style={{ color: 'white', fontSize: '14px', fontFamily: 'Raleway', fontWeight: '600' }}>&nbsp;&nbsp;+91 9076652887</span><br />
                                 </li>
                                 <li>
-                                    <Icon icon="envelope" style={{ color: 'white' }} /><span style={{ color: 'white', fontSize: '14px', fontFamily: 'Raleway', fontWeight: '500' }}>&nbsp;&nbsp;VitCity@company.in</span>
+                                    <Icon icon="envelope" style={{ color: 'white' }} /><span style={{ color: 'white', fontSize: '14px', fontFamily: 'Raleway', fontWeight: '500' }}>&nbsp;&nbsp;UNIV-BUS@company.in</span>
                                 </li>
                                 <li>
                                     <div className="container-fluid d-flex justify-content-start align-items-start mt-20 mb-25 social-icon">
@@ -105,7 +105,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="mt-50 " style={{ color: '#FCCCB0', fontWeight: '500', fontFamily: 'Raleway', letterSpacing: '1px' }}>Copyright &copy; 2021 VitCity SmartBus by vit.pvt.ltd</div>
+                    <div className="mt-50 " style={{ color: '#FCCCB0', fontWeight: '500', fontFamily: 'Raleway', letterSpacing: '1px' }}>Copyright &copy; 2021 UNIV-BUS SmartBus by vit.pvt.ltd</div>
                 </div>
             </div>
         </React.Fragment>

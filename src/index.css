@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: 'Montserrat' !important;
 }
+.w-20{
+  max-width: 20% !important;
+}
 body {
   margin: 0;
   font-family: 'Montserrat';
@@ -118,4 +121,18 @@ body {
 }
 .menu-drawer li a:hover{
   text-decoration: none;
+}
+
+/**********************************************************************************/
+/**********************************************************************************/
+/******************** Search Result page Card**************************************/
+/**********************************************************************************/
+/**********************************************************************************/
+
+.search-card{
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.search-card:hover{
+  border: 1px solid #3498db;
+  background-color: rgba(129, 236, 236,0.2);
 }

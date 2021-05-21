@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { Breadcrumb, Input, InputGroup, Icon, DatePicker, Button } from 'rsuite'
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
@@ -6,7 +7,7 @@ import Header from '../Components/Header';
 const discount = [
     {
         'imgUrl': '/imgs/dis1.png',
-        'title': 'VitCity Welcome Offer',
+        'title': 'UNIV-BUS Welcome Offer',
         'desc': 'Get 15% Off on 1st SmartBus Trip',
         'valid': 'Valid Upto 31 Mar',
     },
@@ -46,7 +47,7 @@ const safety = [
     {
         'imgUrl': '/imgs/cabin.webp',
         'title': 'Private Cabins',
-        'desc': 'IntrCity provides safe and secure cabins for all travellers',
+        'desc': 'UNIV-BUS provides safe and secure cabins for all travellers',
     },
     {
         'imgUrl': 'imgs/san.webp',
@@ -110,7 +111,55 @@ const travelling = [
         'desc': 'Fully sanitized in-bus washrooms for your comfortable travel',
     }
 ]
+
+const searchData = [
+    "P-Block",
+    "N-Block",
+    "M-Block",
+    "Q-Block",
+    "J-Block",
+    "K-Block",
+    "L-Block",
+    "G-Block",
+    "E-Block",
+    "F-Block",
+    "H-Block",
+    "R-Block",
+    "S-Block",
+    "D-Block",
+    "B-Block",
+    "C-Block",
+];
 const Home = (props) => {
+    const [searchFromTerm, setSearchFromTerm] = React.useState("");
+    const [searchToTerm, setSearchToTerm] = React.useState("");
+    const [searchFromResults, setSearchFromResults] = React.useState([]);
+    const [searchToResults, setSearchToResults] = React.useState([]);
+    function handleChange(e) {
+        setSearchFromTerm(e);
+    }
+    function handleChangeTo(e) {
+        setSearchToTerm(e);
+    }
+    React.useEffect(() => {
+        const results = searchData.filter(person =>
+            person.toLowerCase().includes(searchFromTerm)
+        );
+        results.length > 0 ? setSearchFromResults(results) : setSearchFromResults(["No Data Found"]);
+        //setSearchResults(results);
+    }, [searchFromTerm]);
+
+    React.useEffect(() => {
+        const results = searchData.filter(person =>
+            person.toLowerCase().includes(searchToTerm)
+        );
+        results.length > 0 ? setSearchToResults(results) : setSearchToResults(["No Data Found"]);
+        //setSearchResults(results);
+    }, [searchToTerm]);
+    var data = [{
+        "searchFrom": searchFromTerm,
+        "searchTo": searchToTerm,
+    }]
     return (
         <React.Fragment>
             <Header open={props.open} isLoggedIn={props.isLoggedIn} menuOpen={props.menuOpen} />
@@ -125,21 +174,50 @@ const Home = (props) => {
                             <InputGroup.Addon>
                                 <Icon icon="circle-o" style={{ fontSize: '18px' }} />
                             </InputGroup.Addon>
-                            <Input type="text" placeholder="From" />
+                            <Input type="text" placeholder="From" name="from" value={searchFromTerm} onChange={(event) => { handleChange(event) }} />
                         </InputGroup>
                         <img src="/imgs/switch.png" height="40px" width="40px" alt="" />
                         <InputGroup inside>
                             <InputGroup.Addon>
                                 <Icon icon="map-marker" style={{ fontSize: '18px' }} />
                             </InputGroup.Addon>
-                            <Input type="text" placeholder="To" />
+                            <Input type="text" placeholder="To" value={searchToTerm} onChange={(event) => { handleChangeTo(event) }} />
                         </InputGroup>
                         <InputGroup inside>
                             <DatePicker className="ml-10 mr-10 w-100" format="DD-MM-YYYY" />
                         </InputGroup>
-                        <Button className="w-25" appearance="primary" style={{ color: 'white', backgroundColor: '#2ecc71', fontSize: '13px', fontWeight: '500', letterSpacing: '0.4px' }}><Icon icon="search" />&nbsp; Search</Button>
+                        <NavLink to={"/search/" + data}>
+                            <Button className="w-100" appearance="primary" style={{ color: 'white', backgroundColor: '#2ecc71', fontSize: '13px', fontWeight: '500', letterSpacing: '0.4px' }}><Icon icon="search" />&nbsp; Search</Button>
+                        </NavLink>
                     </div>
                     <img style={{ position: 'relative', top: '-26px' }} className="w-100" src="/imgs/shadow2.png" alt="" />
+                </div>
+                <div className="container position-sticky w-100 mb-20" style={{ top: '140px', left: '100px', zIndex: '10' }}>
+                    <div className={searchFromTerm.length || searchToTerm.length > 0 ? "d-flex w-100" : "none"}>
+                        <div className="pl-20 pr-20 w-100" style={{ backgroundColor: (searchFromTerm.length > 0 && searchToTerm.length <= 0) ? "rgba(0,0,0,0.5)" : "transparent", borderRadius: '5px' }}>
+                            <ul>
+                                {
+                                    searchFromResults.map(term => <li style={{ color: 'white', fontSize: '20px' }}>
+                                        {
+                                            searchFromTerm.length > 0 ? term : <div className="d-none"></div>
+                                        }
+                                    </li>)
+                                }
+                            </ul>
+                        </div>
+                        <div className="ml-10 pl-20 pr-20 w-100" style={{ backgroundColor: (searchToTerm.length > 0 && searchFromTerm.length <= 0) ? "rgba(0,0,0,0.5)" : "transparent", borderRadius: '10px' }}>
+                            <ul>
+                                {
+                                    searchToResults.map(term => <li style={{ color: 'white', fontSize: '20px' }}>
+                                        {
+                                            searchToTerm.length > 0 ? term : <div className="d-none"></div>
+                                        }
+                                    </li>)
+                                }
+                            </ul>
+                        </div>
+                        <div className="ml-10 pl-20 pr-20 w-100" style={{ backgroundColor: "transparent", borderRadius: '10px' }}></div>
+                    </div>
                 </div>
                 <div className="container d-flex justify-content-center mb-30">
                     <Button appearance="ghost">Explore our SmartBus Routes</Button>
@@ -164,7 +242,7 @@ const Home = (props) => {
                 </div>
                 <div className="container-fluid mt-50 mb-30" style={{ backgroundImage: 'url("/imgs/bg.webp")', backgroundSize: '100% 100%' }}>
                     <div className="container  pt-40 pb-40">
-                        <h2 className="text-center" style={{ color: 'white', fontWeight: 'bold' }}>IntrCity SmartBus Lounge</h2>
+                        <h2 className="text-center" style={{ color: 'white', fontWeight: 'bold' }}>UNIV-BUS SmartBus Lounge</h2>
                         <p className="text-center mt-20" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: '400', fontSize: '13px', letterSpacing: '0.4px' }}>The first-of-its-kind, a premium lounge for bus travellers. You can now wait for your bus to arrive in style & comfort<br />of an air conditioned lounge that is equipped with all modern amenities</p>
                         <div className="row mt-50">
                             {
@@ -237,7 +315,7 @@ const Home = (props) => {
                                 <img src="/imgs/phone.webp" alt="" />
                             </div>
                             <div className="d-flex flex-column align-items-start justify-content-center ">
-                                <h3 className="mt-20" style={{ fontWeight: 'bold', color: 'rgba(0,0,0,0.8)' }}>Get The VitCity SmartBus App </h3>
+                                <h3 className="mt-20" style={{ fontWeight: 'bold', color: 'rgba(0,0,0,0.8)' }}>Get The UNIV-BUS SmartBus App </h3>
                                 <p style={{ color: 'rgba(0,0,0,0.7)', fontWeight: '400', fontSize: '15px', letterSpacing: '0.4px' }}>Exclusive in-App bus booking features</p>
                                 <div className="d-flex mt-30">
                                     <img src="/imgs/apple.png" style={{ borderRadius: '100px' }} height="50px" width="180px" alt="" />

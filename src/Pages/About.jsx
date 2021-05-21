@@ -71,9 +71,9 @@ const About = (props) => {
                 <div className="row">
                     <div className="col-md-6">
                         <h2 style={{ color: '#2C3138', fontWeight: 'bold' }}>Journey So Far</h2>
-                        <p className="mt-20" style={{ color: 'rgba(0,0,0,0.7)', fontSize: '14px', fontWeight: '500' }}>IntrCity RailYatri started its journey in 2011 and IntrCity SmartBus was launched in early 2019.<br />
-                        IntrCity SmartBus is a fleet of branded buses to give a standardized, safe, secure
-                        & comfortable bus travel experience. IntrCity SmartBus started operations with 2
+                        <p className="mt-20" style={{ color: 'rgba(0,0,0,0.7)', fontSize: '14px', fontWeight: '500' }}>UNIV-BUS RailYatri started its journey in 2011 and UNIV-BUS SmartBus was launched in early 2019.<br />
+                        UNIV-BUS SmartBus is a fleet of branded buses to give a standardized, safe, secure
+                        & comfortable bus travel experience. UNIV-BUS SmartBus started operations with 2
                         cities in early 2019, and as of today we connect over 100 cities PAN India.</p>
                         <Timeline className="mt-50" align="left">
                             <Timeline.Item time="Early 2019">
@@ -100,9 +100,9 @@ const About = (props) => {
             </div>
             <div className="container-fluid mt-50 mb-30" style={{ background: '#2C3138' }}>
                 <div className="container  pt-40 pb-40">
-                    <h2 className="text-center" style={{ color: 'white', fontWeight: 'bold' }}>What makes IntrCity stand different</h2>
+                    <h2 className="text-center" style={{ color: 'white', fontWeight: 'bold' }}>What makes UNIV-BUS stand different</h2>
                     <h6 className="text-center" style={{ color: 'white', fontWeight: '500', letterSpacing: '0.4px' }}>(Let us present this as list of features and amenities)</h6>
-                    <p className="text-center mt-20" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: '400', fontSize: '13px', letterSpacing: '0.4px' }}>Unlike any other normal bus aggregator model, we have built IntrCity SmartBuses as a powerful substitute for trains & a convenient mode of transport for the modern-day budget traveller. To ensure the best experience for travellers we work closely with the top-notch ecosystem players in these following areas:</p>
+                    <p className="text-center mt-20" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: '400', fontSize: '13px', letterSpacing: '0.4px' }}>Unlike any other normal bus aggregator model, we have built UNIV-BUS SmartBuses as a powerful substitute for trains & a convenient mode of transport for the modern-day budget traveller. To ensure the best experience for travellers we work closely with the top-notch ecosystem players in these following areas:</p>
                     <div className="row mt-60">
                         <div className="col-md-6">
                             <ul style={{ listStyleType: 'disc', marginLeft: '30px' }}>
@@ -121,7 +121,7 @@ const About = (props) => {
                 </div>
             </div>
             <div className="container mb-70">
-                <h2 className="text-center mb-20" style={{ color: '#2c3e50', fontWeight: 'bold' }}>Things you’ll love about IntrCity</h2>
+                <h2 className="text-center mb-20" style={{ color: '#2c3e50', fontWeight: 'bold' }}>Things you’ll love about UNIV-BUS</h2>
                 <div className="row">
                     {
                         feature.map((data) => {

@@ -9,7 +9,7 @@ const referal = [
     },
     {
         'imgUrl': '/imgs/referal/2.png',
-        'description': 'Your friend downloads the app and gets a free ride on VitCity SmartBus',
+        'description': 'Your friend downloads the app and gets a free ride on UNIV-BUS SmartBus',
     },
     {
         'imgUrl': '/imgs/referal/3.png',
@@ -64,7 +64,7 @@ const GetFree = () => {
                     <img className="d-flex justify-content-center align-items-center" style={{ marginLeft: '180px' }} src="/imgs/vitlogo.png" height="100px" width="100px" alt="" />
                     <div className="mt-30 d-flex align-items-center" style={{ marginLeft: '150px' }}>
                         <Icon icon="map-marker" size="2x" style={{ color: 'white' }} />
-                        <p className="ml-10" style={{ color: 'white', fontSize: '20px' }}><span style={{ fontFamily: 'Dancing Script !important' }}>VitCity</span> SmartBus</p>
+                        <p className="ml-10" style={{ color: 'white', fontSize: '20px' }}><span style={{ fontFamily: 'Dancing Script !important' }}>UNIV-BUS</span> SmartBus</p>
                     </div>
                 </div>
                 <p className="text-center mt-20 mb-20 text-secondary" style={{ fontWeight: '600', fontSize: '14px' }}>Share your referral code with your friends & enjoy SmartBus rides absolutely free</p>

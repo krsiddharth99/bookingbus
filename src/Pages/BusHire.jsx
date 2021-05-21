@@ -40,7 +40,7 @@ const BusHire = () => {
                 <NavLink to="/" style={{ textDecoration: 'none' }}>
                     <div className="d-flex align-items-center justify-content-center">
                         <img src="/imgs/vitlogo.png" height="70px" width="70px" alt="vitlogo" />
-                        <p className="ml-20" style={{ fontSize: '25px', color: '#2C3138', fontWeight: '600' }}>VitCity <span style={{ color: 'green' }}>SmartCity</span></p>
+                        <p className="ml-20" style={{ fontSize: '25px', color: '#2C3138', fontWeight: '600' }}>UNIV-BUS <span style={{ color: 'green' }}>SmartCity</span></p>
                     </div>
                 </NavLink>
             </div>
@@ -82,7 +82,7 @@ const BusHire = () => {
                 </div>
             </div>
             <div className="container" style={{ position: 'relative', top: '-120px' }}>
-                <h3 className="text-center" style={{ color: 'green', fontWeight: '600' }}>VitCity key steps to ensure safe travel</h3>
+                <h3 className="text-center" style={{ color: 'green', fontWeight: '600' }}>UNIV-BUS key steps to ensure safe travel</h3>
                 <p className="text-center" style={{ fontSize: '14px', color: 'black', fontWeight: '600' }}>Your Safety is our top priority</p>
                 <div className="row mt-50">
                     {

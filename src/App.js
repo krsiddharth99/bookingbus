@@ -12,6 +12,7 @@ import MyBooking from './Pages/MyBooking.jsx';
 import Offers from './Pages/Offers.jsx';
 import Terms from './Pages/Terms.jsx';
 import { Drawer, Button, Input, InputGroup, Icon, Avatar } from 'rsuite';
+import SearchResult from './Pages/SearchResult';
 
 function App() {
   const [isLoggedIn, setLogin] = React.useState(false);
@@ -50,13 +51,14 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact render={(props) => <Home open={open} isLoggedIn={isLoggedIn} menuOpen={menuOpen} />} />
+          <Route path="/search/:search" exact render={(props) => <SearchResult open={open} isLoggedIn={isLoggedIn} menuOpen={menuOpen} />} />
           <Route path="/about" exact render={(props) => <About open={open} isLoggedIn={isLoggedIn} menuOpen={menuOpen} />} />
           <Route path="/bus-hire" exact render={(props) => <BusHire />} />
           <Route path="/bus-ticket" exact render={(props) => <BusTicket open={open} isLoggedIn={isLoggedIn} menuOpen={menuOpen} />} />
           <Route path="/contact-us" exact render={(props) => <Contact open={open} isLoggedIn={isLoggedIn} menuOpen={menuOpen} />} />
           <Route path="/faq" exact render={(props) => <FAQ open={open} isLoggedIn={isLoggedIn} menuOpen={menuOpen} />} />
           <Route path="/get-free" exact render={(props) => <GetFree />} />
-          <Route path="/my-booking" exact render={(props) => <MyBooking />} />
+          <Route path="/my-booking" exact render={(props) => <MyBooking open={open} isLoggedIn={isLoggedIn} menuOpen={menuOpen} />} />
           <Route path="/offers" exact render={(props) => <Offers open={open} isLoggedIn={isLoggedIn} menuOpen={menuOpen} />} />
           <Route path="/terms-and-conditions" exact render={(props) => <Terms />} />
         </Switch>

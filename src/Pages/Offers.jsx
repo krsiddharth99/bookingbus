@@ -7,7 +7,7 @@ import Header from '../Components/Header'
 const discount = [
     {
         'imgUrl': '/imgs/dis1.png',
-        'title': 'VitCity Welcome Offer',
+        'title': 'UNIV-BUS Welcome Offer',
         'desc': 'Get 15% Off on 1st SmartBus Trip',
         'valid': 'Valid Upto 31 Mar',
     },
